@@ -254,7 +254,7 @@
 
 <script setup>
 import { nextTick, onMounted, ref } from "vue";
-import apiDomain from "@/setting";
+import { apiDomain } from "@/setting";
 import { XMLHttpSend, getUrlParam } from "@/util";
 import MsgBox from "./MsgBox.vue";
 
