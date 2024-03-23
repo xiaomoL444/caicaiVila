@@ -1,0 +1,419 @@
+@font-face {
+  font-family: iphoneFont;
+  src: url('/font/iphone.ttf');
+}
+
+/* <!-- 消息框 --> */
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0px;
+  padding: 0px;
+  background-color: #F0F3F5;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: iphoneFont;
+}
+
+.TitleArea {
+  width: 100vw;
+  height: 3rem;
+  top:0;
+  position: fixed;
+  text-align: center;
+  z-index: 9;
+}
+
+.TitleArea .Title {
+  width: fit-content;
+  height: 100%;
+  position: absolute;
+  left: 2.5rem;
+  top: 0.75rem;
+
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.TitleArea .RoomListButton {
+  width: 1.275rem;
+  height: 2.3562rem;
+  position: absolute;
+  top: 0.35rem;
+  left: 1rem;
+}
+
+.TitleArea .SearchButton {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+}
+
+.SendArea {
+  width: 100%;
+  height: 50vh;
+  position:fixed;
+  bottom: -40vh;
+
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.SendArea .InputBox {
+  width: 90%;
+  height: 5vh;
+  top: 0;
+  position: absolute;
+
+  margin-top: 1rem;
+
+  border-radius: 90px;
+
+  background-color: #F5F7F8;
+  color: #C0C6CC;
+
+  font-size: 2.0vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* <!-- 发送区域 --> */
+.WaitArea {
+  /* background-color: white; */
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+  /* bottom: 0rem; */
+  /* display: contents; */
+}
+
+.WaitArea .WaitIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.ViewImage {
+  z-index: 1000;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ViewImage .img {
+  position: relative;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+/* 超链接设置 */
+a:link {
+  color: blue;
+  /* 设置链接的默认颜色 */
+  text-decoration: none;
+  /* 去掉链接下划线 */
+}
+
+a:visited {
+  color: blue;
+  /* 设置已访问链接的颜色 */
+  text-decoration: none;
+  /* 去掉链接下划线 */
+}
+
+a:hover {
+  color: blue;
+  /* 设置鼠标悬停链接的颜色 */
+  text-decoration: none;
+  /* 添加链接下划线 */
+}
+
+a:active {
+  color: blue;
+  /* 设置鼠标点击链接的颜色 */
+  text-decoration: none;
+  /* 去掉链接下划线 */
+}
+
+.VillaCollection {
+  position: fixed;
+  z-index: 99;
+}
+
+.VillaCollection .BackGround {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+
+  left: -100vw;
+  background-color: #00000050;
+
+  border-radius: 10px;
+
+  /* padding-top: 0.5rem;
+  padding-bottom: 0.5rem; */
+
+  transition: all 0.25s;
+
+}
+
+
+
+.VillaCollection .ItemArea {
+  width: 65vw;
+  height: 100vh;
+  left: -65vw;
+  /* bottom:-100vh; */
+
+  position: absolute;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: white;
+  overscroll-behavior: none;
+
+  transition: all 0.25s;
+
+}
+
+.VillaCollection .ItemArea .SearchPanel {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+}
+
+.VillaCollection .ItemArea .SearchPanel .InputArea {
+  width: 100vw;
+  height: auto;
+  position: relative;
+  display: flex;
+}
+
+.VillaCollection .ItemArea .SearchPanel .InputArea .Input {
+  width: auto;
+  padding: 0.5rem;
+
+  margin: 0.81rem;
+
+  flex: content;
+
+  font-size: 1.2rem;
+
+  border-radius: 90px;
+  border-style: solid;
+}
+
+.VillaCollection .ItemArea .SearchPanel .DateInputGroup {
+  height: 1.5rem;
+
+  position: absolute;
+  right: 1rem;
+
+}
+
+.VillaCollection .ItemArea .SearchPanel .DateInputGroup .Item {
+  height: 1.5rem;
+  font-size: 0.8rem;
+  border-radius: 5px;
+
+}
+
+
+.VillaCollection .ItemArea .SearchPanel .SelectUserButton {
+  width: auto;
+  height: 1.5rem;
+  position: absolute;
+
+  left: 1rem;
+
+  border-radius: 5px;
+}
+
+.VillaCollection .ItemArea .SearchPanel .Line {
+  width: 100%;
+  height: 1px;
+  position: relative;
+  /* top: v0w; */
+
+  margin-top: 2rem;
+
+  background-color: black;
+}
+
+.VillaCollection .ItemArea .SearchPanel .MsgList {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.VillaCollection .ItemArea .SearchPanel .MsgList .Msg {
+  width: 100vw;
+  height: auto;
+  position: relative;
+
+  padding: 1rem;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #747779;
+
+  padding: 1rem;
+}
+
+.VillaCollection .ItemArea .SearchPanel .MsgList .Msg .avatar {
+  width: 2.7rem;
+  height: 2.7rem;
+  position: absolute;
+  left: 1rem;
+
+  border-radius: 90px;
+}
+
+.VillaCollection .ItemArea .SearchPanel .MsgList .Msg .name {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 4rem;
+
+  text-align: left;
+}
+
+.VillaCollection .ItemArea .SearchPanel .MsgList .Msg .time {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 3rem;
+
+  text-align: right;
+}
+
+.VillaCollection .ItemArea .SearchPanel .MsgList .Msg .text {
+  width: auto;
+  height: auto;
+  min-height: 1.3rem;
+  position: relative;
+  top: 1.5rem;
+
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+
+.VillaCollection .ItemArea .TopArea .Item {
+  width: auto;
+  height: 4vh;
+  position: relative;
+
+  flex: auto;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
+
+  border-color: #747779;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+
+.VillaCollection .ItemArea .JumpArea {
+  width: 100%;
+  height: 4vh;
+  position: relative;
+
+  display: flex;
+}
+
+.VillaCollection .ItemArea .JumpArea .Input {
+  height: 90%;
+  position: relative;
+
+  /* margin-top: 0.15rem; */
+
+  /* width: fit-content; */
+  flex: content;
+
+  font-size: 1rem;
+}
+
+.VillaCollection .ItemArea .JumpArea .Button {
+  width: 5rem;
+  height: 100%;
+  position: relative;
+
+  flex: none;
+
+  margin-top: 0.15rem;
+}
+
+.VillaCollection .ItemArea .Item {
+  width: auto;
+  height: fit-content;
+  position: relative;
+
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.3rem;
+
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+
+  border-radius: 5px;
+
+  font-size: 1.2rem;
+
+  text-align: left;
+
+  display: flex;
+}
+
+.VillaCollection .ItemArea .Item .Icon {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  /* top: 0.75rem; */
+
+  padding-right: 0.5rem;
+}
+
+.VillaCollection .ClickButton {
+
+  width: 3rem;
+  height: 1.8rem;
+
+  position: relative;
+
+}
+
+/* 旋转 */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

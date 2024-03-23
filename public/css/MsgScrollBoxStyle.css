@@ -1,0 +1,315 @@
+/* 聊天框总 */
+.ScrollBox {
+    width: 100%;
+    max-height: calc(100vh - 3rem - 10vh);
+    position: absolute;
+    top: 3rem;
+    bottom:10vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    overscroll-behavior: none;
+
+    /* transition: all 0.1s; */
+}
+
+/* 置顶信息 */
+.ScrollBox .PinMsgBox {
+    z-index: 99;
+    width: auto;
+    height: auto;
+    position: sticky;
+    top: 0.1rem;
+
+    overflow-x: hidden;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+
+    border-radius: 10px;
+    border-color: #E4E7EB;
+    border-width: 2px;
+    border-style: solid;
+
+    background-color: white;
+
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+/* 系统信息 */
+.ScrollBox .MsgBox .SystemMessage {
+    position: relative;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* 身分信息 */
+.ScrollBox .MsgBox .UserInfo {
+    position: relative;
+    height: auto;
+    width: fit-content;
+    max-width: 50%;
+    padding-top: 0.5rem;
+}
+
+/* 头像 */
+.UserInfo .AvatarImg {
+    position: absolute;
+    border-radius: 90px;
+    width: 2.7rem;
+    height: 2.7rem;
+    left: 1.0rem;
+}
+
+/* 用户名 */
+.UserInfo .PlayerName {
+    position: relative;
+    padding-bottom: 1.5rem;
+    width: fit-content;
+    height: 0vw;
+    font-size: 0.75rem;
+    color: black;
+    left: 4.2rem;
+}
+
+/* 身份组 */
+.PlayerName .MemberRole {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+
+    margin-left: 0.5rem;
+    font-size: 0.6rem;
+    color: black;
+
+    float: right;
+
+}
+
+/* 聊天框（不包含头像与名字） */
+.ScrollBox .MsgBox {
+    width: 100%;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+/* 被选中的动画 */
+@keyframes MsgBox-Select-Ani {
+    0% {
+        background-color: #FFFFFF00;
+    }
+
+    50% {
+        background-color: #00000025;
+    }
+
+    100% {
+        background-color: #FFFFFF00;
+    }
+}
+
+/* 聊天框 */
+.ScrollBox .MsgBox .ChatBox {
+    position: relative;
+    height: auto;
+
+    margin-left: 4.2rem;
+    margin-right: 2.2rem;
+}
+
+/* 内容 */
+.ScrollBox .MsgBox .ChatBox .Content {
+    width: fit-content;
+    /* max-width: 70%; */
+}
+
+/* 文字内容 */
+.ScrollBox .MsgBox .ChatBox .Content .text {
+
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 10px;
+    /* font-size: 1rem; */
+    font-weight: 400;
+    color: black;
+    background-color: white;
+
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+/* 文字内容中的引用内容 */
+.ScrollBox .MsgBox .ChatBox .Content .text .quote {
+    height: 0.8rem;
+    font-size: 80%;
+    margin-top: 0.1rem;
+    margin-bottom: 0.3rem;
+    color: #747779;
+    display: flex;
+}
+
+/* 引用内容中的竖线 */
+.ScrollBox .MsgBox .ChatBox .Content .text .quote .line {
+    width: 0.15rem;
+    height: 0.9rem;
+    position: relative;
+    top: 0.1rem;
+    margin-left: 0.1rem;
+    margin-right: 0.2rem;
+    border-radius: 90px;
+    background-color: #747779;
+    display: flex;
+}
+
+/* 组件合集 */
+.ScrollBox .MsgBox .ChatBox .Content .text .Panel {
+    height: auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+/* 组件们 */
+.ScrollBox .MsgBox .ChatBox .Content .text .Panel .item {
+    height: auto;
+    width: auto;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #74777950;
+    border-radius: 5px;
+    flex: 50%;
+    text-align: center;
+
+    padding: 0.2rem;
+    margin: 0.2rem;
+}
+
+/* 徽标 */
+.ScrollBox .MsgBox .ChatBox .Content .badge {
+    height: 1.4rem;
+    width: fit-content;
+
+    position: relative;
+
+    padding-top: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+
+    margin-top: 0.5rem;
+
+    background-color: #74777975;
+    font-size: 80%;
+    color: balck;
+    border-radius: 5px;
+}
+
+/* 徽标图标 */
+.ScrollBox .MsgBox .ChatBox .Content .badge .img {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    left: 0.3rem;
+    color: #747779;
+}
+
+/* 图片内容 */
+.ScrollBox .MsgBox .ChatBox .Content .img {
+    background-color: #00000015;
+    position: relative;
+    border-radius: 5px;
+}
+
+/* 小字（比如互动） */
+.ScrollBox .MsgBox .ChatBox .Content .smallText {
+    position: relative;
+    text-align: left;
+    font-size: 95%;
+    left: 0.5rem;
+}
+
+/* 帖子内容 */
+.ScrollBox .MsgBox .ChatBox .Content .Post {
+    width: 15rem;
+    height: 7rem;
+    border-radius: 5px;
+    background-color: white;
+    white-space: nowrap;
+    text-align: left;
+}
+
+/* 帖子内容中的图片 */
+.ScrollBox .MsgBox .ChatBox .Content .Post .img {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    background-color: white;
+}
+
+/* 帖子内容中的标题 */
+.ScrollBox .MsgBox .ChatBox .Content .Post .title {
+    position: absolute;
+    left: 5rem;
+    width: 8rem;
+    top: 1.5rem;
+    font-weight: 600;
+    font-size: 100%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* 帖子内容中的副标题 */
+.ScrollBox .MsgBox .ChatBox .Content .Post .subject {
+    width: 9rem;
+    height: 3rem;
+    overflow-y: hidden;
+    position: absolute;
+    left: 5rem;
+    top: 2.5rem;
+    font-weight: 400;
+    color: #747779;
+    font-size: 100%;
+    overflow-x: hidden;
+}
+
+/* 帖子内容中的分割线（划线） */
+.ScrollBox .MsgBox .ChatBox .Content .Post .divingLine {
+    position: absolute;
+    width: 13rem;
+    height: 0.05rem;
+    left: 1rem;
+    top: 5rem;
+    background-color: #F0F3F5;
+}
+
+/* 帖子内容中的小字部分 */
+.ScrollBox .MsgBox .ChatBox .Content .Post .detail {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1rem;
+    /* border: 1; */
+    color: #747474;
+}
