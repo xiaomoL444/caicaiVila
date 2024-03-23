@@ -254,7 +254,7 @@
 
 <script setup>
 import { nextTick, onMounted, ref } from "vue";
-import { apiDomain } from "@/setting";
+import apiDomain from "@/setting";
 import { XMLHttpSend, getUrlParam } from "@/util";
 import MsgBox from "./MsgBox.vue";
 
@@ -263,15 +263,6 @@ onMounted(() => {
   let index = getUrlParam("page");
   villa_id = getUrlParam("villa_id");
   room_id = getUrlParam("room_id");
-
-  // //获取别野表情包
-  // XMLHttpSend(apiDomain + "/getEmoticonInfo", "GET", (response) => {
-  //   DbyEmotionList = response.data.type_emoticon_mapping;
-  // });
-  // //获取米社表情包
-  // XMLHttpSend(apiDomain + "/emoticon_set", "GET", (response) => {
-  //   MHYEmotionList = response.data.list;
-  // });
 
   //刷新消息
   XMLHttpSend(
@@ -541,6 +532,7 @@ function RefreshNewMsg(index, addType, viewMsgID = "") {
         });
       }
 
+      //转为android chrome写的，重新设定字体大小可减少文字意外换行的概率
       nextTick(() => {
         let s = document.getElementsByClassName("ChatBox");
         for (let i = 0; i < s.length; i++) {
@@ -685,15 +677,18 @@ function SearchMsg() {
   );
 }
 
+//返回yyyy-MM-dd时间
 export function Time(time = +new Date()) {
   var date = new Date(time + 8 * 3600 * 1000);
   return date.toJSON().substring(0, 19).replace("T", " ");
 }
 
+//返回房间url信息
 function GetVillaMessageUrl() {
   return "villa_id=" + villa_id + "&room_id=" + room_id;
 }
 
+//转义表情文字
 export let reg = /\[.+?\]/g;
 export function replaceDbyEmotion(match) {
   let res = match;
@@ -706,6 +701,7 @@ export function replaceDbyEmotion(match) {
   });
   return res;
 }
+//米游社表情
 export function MHYEmotion(match) {
   let res = match;
   MHYEmotionList.forEach((Type) => {
@@ -719,6 +715,8 @@ export function MHYEmotion(match) {
   });
   return res;
 }
+
+//跳转特定日期
 function JumpDateTime() {
   if (jumpDateTime.value != "0") {
     SearchPanel("close");
@@ -740,6 +738,8 @@ function JumpDateTime() {
     );
   }
 }
+
+//@高亮
 export function TextHightLight(msgContent) {
   let feature = [];
   if (msgContent.content.entities == undefined) return msgContent;
