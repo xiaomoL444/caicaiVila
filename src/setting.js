@@ -1,2 +1,2 @@
-// export let apiDomain = process.env.NODE_ENV === 'production' ? 'https://xiaomol444.xyz/dby' : "http://[::1]:3280/dby";
-export let apiDomain = process.env.NODE_ENV === 'production' ? 'https://xiaomol444.xyz/dby' : "http://8307r25r88.goho.co:21345/dby";
+export let apiDomain = process.env.NODE_ENV === 'production' ? 'https://xiaomol444.xyz/dby' : "http://[::1]:3280/dby";
+// export let apiDomain = process.env.NODE_ENV === 'production' ? 'https://xiaomol444.xyz/dby' : "http://8307r25r88.goho.co:21345/dby";
